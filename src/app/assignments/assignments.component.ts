@@ -101,6 +101,7 @@ export class AssignmentsComponent implements OnInit {
       width: '25%',
       data: {id: useID}
     });
+
        
   }
   ondelete(id:number) 
