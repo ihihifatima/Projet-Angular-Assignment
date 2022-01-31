@@ -100,7 +100,8 @@ export class AssignmentsComponent implements OnInit {
     const dialogRef = this.dialog.open(AddAssignmentComponent, {
       width: '25%',
       data: {id: useID}
-    });
+    }).afterClosed()
+    .subscribe(() => this.getAssignments());
 
        
   }
@@ -110,7 +111,8 @@ export class AssignmentsComponent implements OnInit {
     const dialogRef = this.dialog.open(AssgnmentsDeleteComponent, {
       width: '25%',
       data: {id: useID}
-    })
+    }).afterClosed()
+    .subscribe(() => this.getAssignments());
   }
 
   ondetail(id:number)
@@ -119,7 +121,8 @@ export class AssignmentsComponent implements OnInit {
     const dialogRef = this.dialog.open(AssignmentDetailComponent, {
       width: '25%',
       data: {id: useID}
-    })
+    }).afterClosed()
+    .subscribe(() => this.getAssignments());
   }
   onupdate(id:number)
   {
@@ -127,12 +130,13 @@ export class AssignmentsComponent implements OnInit {
     const dialogRef = this.dialog.open(EditAssignmentComponent, {
       width: '25%',
       data: {id: useID}
-    })
+    }).afterClosed()
+    .subscribe(() => this.getAssignments());
   }
   decon(){
       if(this.authService.loggedIn) {
         this.authService.logOut();
-        this.router.navigate(["/home"]);
+        this.router.navigate(["/authen"]);
       }
     
   }
