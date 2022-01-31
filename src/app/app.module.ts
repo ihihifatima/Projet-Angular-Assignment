@@ -41,6 +41,10 @@ const routes: Routes = [
     component:AuthenComponent
   },
   {
+    path:'authen',
+    component:AuthenComponent
+  },
+  {
     path:"home",
     component:AssignmentsComponent
   },

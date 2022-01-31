@@ -134,10 +134,9 @@ export class AssignmentsComponent implements OnInit {
     .subscribe(() => this.getAssignments());
   }
   decon(){
-      if(this.authService.loggedIn) {
         this.authService.logOut();
         this.router.navigate(["/authen"]);
-      }
+   
     
   }
 }

@@ -18,7 +18,7 @@ export class AuthenComponent implements OnInit {
      private router:Router) { }
 
   datas=[
-    {username: 'Admin', password:'123'},{username: 'Pesonne',Password: '123'}
+    {username: 'Admin', password:'123'}
   ]
    ngOnInit(): void {
     
@@ -29,9 +29,12 @@ export class AuthenComponent implements OnInit {
      if(this.username==data.username && this.password==data.password){
           this.authService.logIn();
           this.router.navigate(["/home"]);
-          this.notificationService.success(':: Supprimer avec succes!!');
-      }else{
-        this.notificationService.warn(':: Element Non Supprimer!!');
+          this.notificationService.success(':: Connexion avec succes!!');
+          return;
+      }else {
+        
+        this.notificationService.warn(':: Mot de pass ou Nom Utilisateur Incorrect!!');
+
       }
      
   });
